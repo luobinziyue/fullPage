@@ -1,0 +1,228 @@
+#bg {
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	/*background-color: pink;*/
+}
+.rotate {
+	transform: translate(-50%, -50%) rotateZ(-60deg)!important; /*  提高权重 */
+}
+
+/*第一行圆*/
+.row01 .circle1,
+.row01 .circle2,
+.row01 .circle3,
+.row01 .circle4
+ {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	/*background-color: purple;*/
+}
+.row01 .circle2 {
+	margin-top: -300px;
+	margin-left:600px;
+}
+.row01 .circle3 {
+	margin-top: 320px;
+	margin-left:550px;
+}
+.row01 .circle4 {
+	margin-top: 350px;
+	margin-left:850px;
+}
+
+.row02 .circle1,
+.row02 .circle2,
+.row02 .circle3,
+.row02 .circle4
+ {
+	position: absolute;
+	top: 200px;
+	left: 50px;
+	width: 180px;
+	height:180px;
+	border-radius: 100%;
+	/*background-color: purple;*/
+}
+.row02 .circle2 {
+	margin-left: 250px;
+	margin-top: 350px;
+}
+.row02 .circle3 {
+	margin-left: 1200px;
+	margin-top: 150px;
+}
+.row02 .circle4 {
+	margin-left: 1500px;
+}
+
+.row03 .circle1,
+.row03 .circle2,
+.row03 .circle3,
+.row03 .circle4
+ {
+	position: absolute;
+	top: 600px;
+	left: -300px;
+	width: 350px;
+	height:350px;
+	border-radius: 100%;
+	/*background-color: purple;*/
+}
+
+.row03 .circle2
+ {
+	margin-left: 700px;
+}
+.row03 .circle3
+ {
+ 	margin-top: -500px;
+	margin-left: 1000px;
+}
+.row03 .circle4 {	
+	margin-left:1800px;
+}
+.row01 div,
+.row02 div,
+.row03 div
+ {
+	/*linear-gradient:（起始位置，起始颜色，结束颜色）线性渐变;*/
+	background: -webkit-linear-gradient(right,#fff,#cdcdcd);
+	
+}
+
+
+/*第一屏制作*/
+.first {
+	perspective: 1000px;	
+}
+.comein .p1 {
+	transform: translate(-50%,-50%) translateZ(0px) rotateY(0deg);
+}
+.p1 {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%) translateZ(800px) rotateY(-180deg);
+	width: 880px;
+	height: 320px;	
+	background: url(../images/skin.gif) no-repeat ;
+	transition: all 1s;
+}
+
+.second {
+	perspective: 1000px;
+}
+.speed {
+	width: 382px;
+	height: 382px;
+	transform: translateZ(-5000px) scale(0.2);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: url(../images/layer_main_gradient.png) no-repeat;
+	transition: all 1s;
+}
+.pointer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%) ;
+}
+.p2 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%) translateZ(-5000px) scale(0.2) ;
+	width: 316px;
+	height: 360px;	
+	transition: all 1s;
+	/*background: url(../images/skin.gif) no-repeat ;*/
+	
+}
+.third {
+	perspective: 1000px;
+	overflow: hidden;
+}
+.p3 {
+	position: absolute;
+	width: 1440px;
+	height: 768px;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -240px;
+	background-color: pink;
+	transform: translateZ(1500px) rotateX(120deg);
+	transition: all 4s;
+	z-index: -1;
+
+}
+.title3 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -412px;
+	transform: translateZ(1200px) rotateY(-60deg) ;
+	transition: all 4s;
+
+}
+.fourth {
+	perspective: 1000px;
+	/*z-index: 1;*/
+}
+/*.wechat {
+	height: 200px;
+	width: 200px;
+	background-color: green;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: rotateY(-60deg);
+	transition: all 3s;
+}
+*/
+
+
+
+
+/*动画组*/
+.row01 div {
+	animation: circlemove 40s linear infinite;
+}
+.row02 div {
+	animation: circlemove 25s linear infinite;
+}
+.row03 div{	
+	animation: circlemove 50s linear infinite;
+}
+
+/*引擎指针*/
+.layer {
+	animation: engine 1s linear; 
+}
+
+
+@keyframes circlemove {
+	0% {
+		transfrom: translate(0) rotate(0deg);
+	}
+	100% {
+		transform: translate(-1500px) rotate(3600deg);
+	}
+}
+@keyframes engine {
+	40% {
+		transform: translateX(0px) translateY(100px) translateZ(0px) rotateY(-30deg) scale(0.6) ;
+	}
+	100% {
+		transform: translateX(500px) translateY(-150px) translateZ(800px) rotateY(30deg)  ;
+	}
+}
